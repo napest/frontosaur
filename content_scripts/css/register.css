@@ -1,0 +1,214 @@
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.wrapper {
+    position: absolute;
+    left: 0;
+    width: 350px;
+}
+
+.logo {
+    margin: 0 auto;
+    display: block;
+    margin-top: 60px;
+    height: 66px;
+    width: 112px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/logo.png');
+}
+
+.header {
+    font-family: Catamaran, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 46px;
+    font-size: 43px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.promo {
+    font-family: Open_Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 22px;
+    font-size: 12px;
+    text-align: center;
+    color: #E5E5E5;
+}
+
+.form-input {
+    font-family: Istok_Web;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #979797;
+    padding: 7px 12px 7px 12px !important;
+}
+
+.username-wrapper, .password-wrapper, .email-wrapper {
+    width: 220px;
+    margin: 0 auto;
+}
+
+.password-wrapper {
+    margin-bottom: 22px;
+}
+
+.auth_form {
+    display: block;
+}
+
+.auth_form label {
+    font-family: Open_Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    margin-bottom: 7px !important;
+    display: inline-block;
+    width: auto;
+}
+
+.username, .pass, .email {
+    background: #FFFFFF;
+    border: 1px solid rgba(151, 151, 151, 0.5);
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 220px;
+    height: 37px;
+    display: block;
+}
+
+.pass {
+    margin-bottom: 11px;
+}
+
+.forgot_pass {
+    font-family: Istok_Web, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 22px;
+}
+
+.buttons-wrapper {
+    width: 250px;
+    margin: 0 auto;
+}
+
+.register_button, .learn-more_button {
+    width: 120px;
+    height: 46px;
+    border: 3px solid #EBD081;
+    background-color: transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 2.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    float: left;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin-bottom: 27px;
+}
+
+.register_button {
+    padding-top: 14px;
+    margin-right: 10px;
+}
+
+.learn-more_button {
+    clear: right;
+    padding-top: 14px;
+}
+
+.register_button:hover, .learn-more_button:hover {
+    border: 3px solid #FCDA6F;
+}
+
+.connect-wrapper {
+    width: 240px;
+    margin: 0 auto;
+}
+
+.connect {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+.social {
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/social.png');
+    margin-bottom: 53px;
+}
+
+.social_1 {
+    margin-right: 13px;
+}
+
+.social_2 {
+}
+
+.no_account {
+    font-family: Open_Sans;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 188px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.no_account a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+input:active, button:active {
+  outline: none;
+}

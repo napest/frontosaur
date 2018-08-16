@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <!-- <div id="move" class="move_me"></div> -->
+        <div class="panel">
+            <div class="logo"></div>
+            <h1 class="header">Welcome<br>
+            to Frontosaur</h1>
+            <p class="promo">Collaborate on web projects<br>
+            for free</p>
+            <form class="auth_form" action="" method="GET">
+                <div class="username-wrapper">
+                    <label for="username">Your name</label><br>
+                    <input id="id_register_username" class="form-input username" type="text" name="username" value="" required>
+                </div>
+                <div class="email-wrapper">
+                    <label for="email">E-Mail</label><br>
+                    <input id="id_register_email" class="form-input email" type="email" name="e-mail" value="" required>
+                </div>
+                <div class="password-wrapper">
+                    <label for="pass">Password</label><br>
+                    <input id="id_register_pass" class="form-input pass" type="password" name="pass" value="" required>
+                </div>
+                <div class="buttons-wrapper clearfix">
+                    <!-- <input type="submit" value="login" class="login_button"> -->
+                    <a id="id_register_button" href="#" class="register_button">register</a>
+                    <a href="#" class="learn-more_button">learn more</a>
+                </div>
+            </form>
+            <div class="connect-wrapper clearfix">
+                <p class="connect">or connect with</p>
+                <a href="#" class="social social_1"></a>
+                <a href="#" class="social social_2"></a>
+            </div>
+            <p class="no_account">Already registered?<a id="to_login"><b>Sign in</b></a></p>
+        </div>
+        
+		<script>
+		
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '{your-app-id}',
+		      cookie     : true,
+		      xfbml      : true,
+		      version    : '{api-version}'
+		    });
+		      
+		    FB.AppEvents.logPageView();   
+		      
+		  };
+		
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "https://connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+    </body>
+</html>

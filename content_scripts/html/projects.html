@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div class="panel">
+            <div id="id_move" class="move"></div>
+            <div class="ge-dots" id="dots">
+	            <div class="ge-settings-popup" style="display:none">
+		            <div class="popup_triangle"></div>
+		            <p>Profile settings</p>
+		            <p id="signoutbtn">Sign out</p>
+	            </div>
+            </div>
+            <img class="ge-photo" id="userphoto" src="" alt="" height="69" width="69">
+            <p class="ge-my-name" id="username">John Johnson</p>
+			<div class="ge-group-buttons ge-clearfix">
+				<div class="ge-button ge-page">Page</div>
+				<div class="ge-button ge-projects">Projects	<div class="ge-projects_number">2</div></div>
+				<div class="ge-button ge-comments">Comments</div>
+			</div>
+			<script id="ge-item-invites" type="text/x-jquery-tmpl">
+				    <div class="ge-item">
+						<div class="ge-item-icons icons_action ge-clearfix">
+							<div class="ge-item-icon ge-cancel" data-id="${id}"></div>
+							<div class="ge-item-icon ge-check" data-id="${id}"></div>
+						</div>
+						
+						<div class="ge-item-header ge-clearfix">
+							<div class="ge-date">${date_invite}</div>
+							<div class="ge-title">${project_name}</div>
+						</div>
+						<div class="ge-item-bottom ge-clearfix">
+							<div class="ge-item-bottom_left ge-clearfix">
+								<img class="ge-item-photo" src="${invite_img}">
+								<div class="ge-item-name">${invite_name}</div>
+							</div>
+							<div class="ge-item-bottom_center ge-clearfix">
+							</div>
+						</div>
+					</div>
+				</script>
+				<script id="ge-item-projects" type="text/x-jquery-tmpl">
+				    <div class="ge-item">
+						
+						<div class="ge-item-header ge-clearfix">
+							<div class="ge-date">${creation_date}</div>
+							<div class="ge-title" data-id="${id}" onclick="projects.openProject()">${name}</div>
+						</div>
+						<div class="ge-item-bottom ge-clearfix">
+							<div class="ge-item-bottom_left ge-clearfix">
+								<img class="ge-item-photo" src="${invite_img}">
+								<div class="ge-item-name">${name}</div>
+							</div>
+							<div class="ge-item-bottom_center ge-clearfix">
+							</div>
+						</div>
+					</div>
+				</script>
+			<div id="ge-item-container" class="ge-item-container">
+				
+				
+				
+<!--
+				<div class="ge-item">
+					
+					<div class="ge-item-icons icons_default ge-clearfix">
+						<div class="ge-item-icon ge-message">
+							<div class="ge-message_number">2</div>
+						</div>
+					</div>
+					<div class="ge-item-header ge-clearfix">
+						<div class="ge-date">18 Sep • 21:00</div>
+						<div class="ge-title">For Hse Press</div>
+					</div>
+					<div class="ge-item-bottom ge-clearfix">
+						<div class="ge-item-bottom_left ge-clearfix">
+							<img class="ge-item-photo">
+							<div class="ge-item-name">Юрий Клименко</div>
+						</div>
+						<div class="ge-item-bottom_center ge-clearfix">
+							<img class="ge-item-author ge-item-author_1">
+							<img class="ge-item-author ge-item-author_2">
+						</div>
+					</div>
+				</div>
+-->
+			</div>
+			<div id="ge-add-project" class="ge-add-project ge-clearfix">
+				<p class="ge-add-project_plus">+</p>
+				<p class="ge-add-project_text">Add project</p>
+			</div>
+			<div id="ge-add-project-popup" class="ge-add-project-popup" style="display:none">
+				<div class="popup_triangle"></div>
+				<p class="popup_header">Write project name here</p>
+				<input id="popup_input" class="popup_input" type="text" value="" placeholder="New project" required autofocus>
+				<div id="ge-add-project-popup-btn" class="popup_btn ge-clearfix">
+					
+					<p class="popup_btn_text">Add project</p>
+				</div>
+			</div>
+			<div id="ge-to-archive" class="ge-to-archive ge-clearfix">
+				<p class="ge-to-archive_text">Go to archive</p>
+			</div>
+			
+		</div>
+	</body>
+</html>

@@ -1,0 +1,202 @@
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/*@font-face {
+    font-family: 'Catamaran';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Catamaran/Catamaran-SemiBold.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Catamaran/Catamaran-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Catamaran/Catamaran-SemiBold.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Catamaran/Catamaran-SemiBold.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Catamaran/Catamaran-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+*/
+@font-face {
+	font-family: 'Istok_Web';
+	src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Istok_Web/IstokWeb-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Montserrat';
+	src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/Montserrat/Montserrat-Bold.ttf');
+}
+
+.fronto-host {
+	position: fixed;
+	top: 0; left: 0;
+	contain: layout style size;
+	z-index: 2147483640;
+}
+
+.frontosaur {
+}
+
+.panel.left {
+	left: 0;
+}
+
+.panel.right {
+	right: 0;
+}
+
+.panel {
+	position: fixed;
+	z-index: 99999999;
+	width: 350px;
+	top: 0;
+	overflow-y: scroll;
+	background-color: #919AED;
+	height: 100vh;
+	text-align: left;
+}
+.logo {
+    margin: 0 auto;
+    display: block;
+    margin-top: 60px;
+    height: 66px;
+    width: 112px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/logo.png');
+}
+.move {
+	background-image: url("chrome-extension://__MSG_@@extension_id__/content_scripts/img/move-me.png");
+	height: 20px;
+	width: 25px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	position: absolute;
+	left: 15px;
+	margin-top: 13px;
+	cursor: pointer;
+}
+
+.ge-dots {
+	background-image: url("chrome-extension://__MSG_@@extension_id__/content_scripts/img/dots.png");
+	height: 6px;
+	width: 29px;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	background-size: cover;
+	position: absolute;
+	right: 28px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.ge-photo {
+                display: block;
+                margin: 0 auto;
+                margin-top: 30px;
+                margin-bottom: 13px;
+                border-radius: 100px;
+            }
+
+            .ge-my-name {
+                margin: 0;
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: bold;
+                line-height: normal;
+                font-size: 14px;
+                text-align: center;
+                letter-spacing: 0.5px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+            }
+
+            .ge-my-username {
+                margin: 0;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                font-size: 12px;
+                text-align: center;
+                letter-spacing: 0.3px;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .ge-group-buttons {
+                border: 2px solid #FFFFFF;
+                box-sizing: border-box;
+                border-radius: 5px;
+                background-color: transparent;
+                width: 298px;
+                margin: 0 auto;
+                margin-top: 26px;
+            }
+
+            .ge-button {
+                cursor: pointer;
+                float: left;
+                width: 98px;
+                height: 30px;
+                padding-top: 8px;
+                border-left: 2px solid #FFFFFF;
+                font-family: 'Montserrat';
+                font-style: normal;
+                /*font-weight: 100;*/
+                line-height: normal;
+                font-size: 11px;
+                text-align: center;
+                letter-spacing: 1.5px;
+                color: #FFFFFF;
+                box-sizing: border-box;
+                text-transform: uppercase;
+            }
+
+            .ge-button:first-child {
+                border-left: none;
+            }
+
+            .ge-button:hover, .ge-button.active  {
+                color: #7885FF;
+                background-color: #FFFFFF;
+            }
+.ge-button:hover, .ge-button.active  {
+                color: #7885FF;
+                background-color: #FFFFFF;
+            }
+            .ge-settings-popup {
+			width: 98px;
+			height: 47px;
+			margin-left: 25px;
+			background: #FFFFFF;
+			border-radius: 5px;
+			padding: 20px;
+			position: absolute;
+			left: -125px;
+			top: 20px;
+			z-index: 1000000;
+			margin-bottom: 30px;
+		}
+		.ge-settings-popup p {
+			font-family: 'Open Sans';
+			font-style: normal;
+			font-weight: normal;
+			line-height: 17px;
+			font-size: 13px;
+			margin: 0;
+			padding: 0;
+			color: #8A8A8A;
+		}
+		.ge-settings-popup p:first-of-type {
+			
+			margin-bottom: 10px;
+		}
+
+		.ge-settings-popup .popup_triangle {
+			width: 0;
+			height: 0;
+			    border-left: 8px solid transparent;
+			    border-right: 8px solid transparent;
+			    border-bottom: 8px solid white;
+			    position: absolute;
+			    top: -8px;
+			left: 106px;
+		}
+            

@@ -1,0 +1,361 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+            .ge-clearfix::after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+
+            .ge-wrapper {
+                position: relative;
+                width: auto;
+            }
+
+            
+
+            
+
+            .ge-group-websites {
+                width: 280px;
+                margin: 0 auto;
+                margin-top: 18px;
+            }
+
+            .ge-website {
+                cursor: pointer;
+                float: left;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 400;
+                line-height: 17px;
+                font-size: 12px;
+                text-align: right;
+                color: #FFFFFF;
+            }
+
+            .ge-item {
+                width: 300px;
+                background: #FFFFFF;
+                border-radius: 4px;
+                margin: 0 auto;
+                position: relative;
+                margin-top: 20px;
+                padding-top: 23px;
+                padding-bottom: 22px;
+            }
+
+            .ge-item:last-child {
+                margin-bottom: 96px;
+            }
+
+            .ge-item-number {
+                position: absolute;
+                top: -15px;
+                left: -15px;
+                background: #B6BDFA;
+                border: 2px solid #FFFFFF;
+                box-sizing: border-box;
+                width: 36px;
+                height: 36px;
+                -moz-border-radius: 18px;
+                -webkit-border-radius: 18px;
+                border-radius: 18px;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                line-height: 17px;
+                font-size: 18px;
+                text-align: center;
+                padding-top: 8px;
+                color: #FFFFFF;
+            }
+
+            .ge-item-icons {
+                display: block;
+                float: right;
+                margin-right: 18px;
+                opacity: 0.3;
+                transition: opacity 0.3s;
+            }
+
+            .ge-item-icons:hover {
+                opacity: 1;
+            }
+
+            .ge-item-icon {
+                background-repeat: no-repeat;
+                background-position: 50% 50%;
+                background-size: cover;
+                float: right;
+                margin-left: 6px;
+                cursor: pointer;
+            }
+
+            .ge-item-icon:last-child {
+                margin-left: none;
+            }
+
+            .ge-check {
+                height: 14px;
+                width: 14px;
+                /*background-image: url(../img/check.png);*/
+            }
+
+            .ge-pencil {
+                width: 12px;
+                height: 12px;
+                /*background-image: url(../img/pencil.png);*/
+            }
+
+            .ge-bin {
+                width: 10px;
+                height: 12px;
+                /*background-image: url(../img/bin.png);*/
+            }
+
+            .ge-comment {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .ge-comment-header .ge-name {
+                /*float: left;*/
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 10px;
+                font-size: 15px;
+
+                margin-right: 5px;
+                color: #8F8F8F;
+            }
+
+            .ge-comment-header .ge-date {
+                /*float: left;*/
+                font-family: 'Open Sans';
+                line-height: normal;
+                font-size: 11px;
+                margin-top: 5px;
+                color: #B5B5B5;
+                margin-bottom: 9px;
+            }
+
+            .ge-comment-text {
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 19px;
+                font-size: 14px;
+                margin-bottom: 16px;
+                color: #404040;
+            }
+
+            .ge-comment-text ol {
+                margin: 0;
+                padding-left: 17px;
+            }
+
+            .ge-forwarded {
+                margin-left: 22px;
+                position: relative;
+                padding-bottom: 22px;
+            }
+
+            .ge-forwarded-container {
+                border-left: 2px solid rgba(120, 133, 255, 0.2);
+            }
+
+            .ge-forwarded .ge-comment {
+                padding-left: 13px;
+            }
+
+            .ge-forwarded .ge-comment-text {
+                margin-bottom: 19px;
+            }
+
+            .ge-view-all {
+                position: absolute;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                line-height: 17px;
+                font-size: 12px;
+                text-align: right;
+                color: #7985F2;
+                bottom: 14px;
+                right: 20px;
+                margin: 0;
+                cursor: pointer;
+            }
+
+            .ge-view-all:hover {
+                text-decoration: underline;
+            }
+
+            .ge-forwarded .ge-name {
+                float: left;
+                line-height: 23px;
+            }
+
+            .ge-forwarded .ge-date {
+                float: right;
+            }
+
+            .ge-write-comment {
+                position: relative;
+                width: 278px;
+            }
+
+            .ge-write-comment textarea {
+                background: rgba(120, 133, 255, 0.18);
+                border-radius: 5px;
+                border: none;
+                margin-left: 22px;
+                width: 256px;
+                padding: 9px 60px 10px 18px;
+                box-sizing: border-box;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 17px;
+                font-size: 14px;
+                color: #8A8A8A;
+
+            }
+
+            .ge-write-comment input[type="submit"] {
+                position: absolute;
+                right: 12px;
+                bottom: 12px;
+                background-color: transparent;
+                border: none;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                line-height: 13px;
+                font-size: 13px;
+                cursor: pointer;
+                color: #919191;
+            }
+
+            input:focus,
+            textarea:focus {
+              outline: none;
+            }
+
+            input:active,
+            textarea:active {
+              outline: none;
+            }
+
+            textarea {resize: none}
+
+            .ge-choose-and-write {
+                margin: 0 auto;
+                box-sizing: border-box;
+                width: 300px;
+                position: relative;
+                margin-bottom: 23px;
+            }
+
+            .ge-choose-and-write__write-comment {
+                position: relative;
+            }
+
+            .ge-choose-and-write textarea {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 5px;
+                border: none;
+                width: 300px;
+                box-sizing: border-box;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 17px;
+                font-size: 14px;
+                padding: 13px 60px 10px 45px;
+                color: #828282;
+            }
+
+            .ge-choose-and-write input[type="submit"] {
+                position: absolute;
+                right: 15px;
+                bottom: 10px;
+                background-color: transparent;
+                border: none;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: 600;
+                line-height: 23px;
+                font-size: 13px;
+                cursor: pointer;
+                color: #919191;
+            }
+
+            .ge-target {
+                /*background-image: url(../img/target.png);*/
+                background-size: cover;
+                height: 25px;
+                width: 25px;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                position: absolute;
+                z-index: 999;
+                left: 10px;
+                top: 9px;
+                cursor: pointer;
+            }
+         
+            .paths {
+                background: rgba(255, 255, 255, 0.95);
+                border-radius: 5px;
+                border: none;
+                width: 300px;
+                height: 80px;
+                overflow-y: scroll;
+                box-sizing: border-box;
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 17px;
+                font-size: 14px;
+                padding: 13px 60px 10px 45px;
+                color: #828282;
+                margin: 0 auto;
+                margin-bottom: 23px;
+            }
+     .ge-empty-item {
+    text-align: center;
+    color: #FFFFFF;
+    width: 
+}
+.ge-button-single {
+    cursor: pointer;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 3px;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    display: inline-block;
+    padding: 8px 10px;
+}
+p.ge-paragraph {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    font-size: 17px;    
+}

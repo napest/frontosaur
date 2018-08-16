@@ -1,0 +1,425 @@
+/*@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Italic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Italic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Italic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Italic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiboldItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiboldItalic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiboldItalic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiboldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraBold.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraBold.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraBold.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-Thin.eot');
+    src: url('Catamaran-Thin.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-Thin.woff2') format('woff2'),
+        url('Catamaran-Thin.woff') format('woff'),
+        url('Catamaran-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-ExtraLight.eot');
+    src: url('Catamaran-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-ExtraLight.woff2') format('woff2'),
+        url('Catamaran-ExtraLight.woff') format('woff'),
+        url('Catamaran-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiBoldItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiBoldItalic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiBoldItalic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Semibold.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Semibold.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Semibold.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraboldItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraboldItalic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraboldItalic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraboldItalic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-ExtraboldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Light.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Light.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Light.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Light.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-Light.eot');
+    src: url('Catamaran-Light.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-Light.woff2') format('woff2'),
+        url('Catamaran-Light.woff') format('woff'),
+        url('Catamaran-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-ExtraBold.eot');
+    src: url('Catamaran-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-ExtraBold.woff2') format('woff2'),
+        url('Catamaran-ExtraBold.woff') format('woff'),
+        url('Catamaran-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Bold.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Bold.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Bold.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Bold.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-Medium.eot');
+    src: url('Catamaran-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-Medium.woff2') format('woff2'),
+        url('Catamaran-Medium.woff') format('woff'),
+        url('Catamaran-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-BoldItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-BoldItalic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-BoldItalic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Catamaran';
+    src: url('Catamaran-Regular.eot');
+    src: url('Catamaran-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Catamaran-Regular.woff2') format('woff2'),
+        url('Catamaran-Regular.woff') format('woff'),
+        url('Catamaran-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-LightItalic.eot');
+    src: url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-LightItalic.woff2') format('woff2'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-LightItalic.woff') format('woff'),
+        url('chrome-extension://__MSG_@@extension_id__/content_scripts/fonts/opensans/OpenSans-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}*/
+.logo {
+    margin: 0 auto;
+    display: block;
+    margin-top: 60px;
+    height: 66px;
+    width: 112px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/logo.png');
+}
+
+.header {
+    font-family: Catamaran;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 46px;
+    font-size: 43px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+
+.promo {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    font-size: 12px;
+    text-align: center;
+    color: #E5E5E5;
+}
+
+.form-input {
+    font-family: Istok_Web;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #979797;
+    padding: 7px 12px 7px 12px !important;
+}
+
+.username-wrapper, .email-wrapper, .password-wrapper {
+    width: 220px;
+    margin: 0 auto;
+}
+
+.auth_form {
+    display: block;
+}
+
+.auth_form label {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+    mix-blend-mode: normal;
+    margin-bottom: 7px !important;
+    display: inline-block;
+    width: auto;
+}
+
+.username, .email, .pass {
+    background: #FFFFFF;
+    border: 1px solid rgba(151, 151, 151, 0.5);
+    box-sizing: border-box;
+    border-radius: 3px;
+    width: 220px;
+    height: 37px;
+    display: block;
+}
+
+.pass {
+    margin-bottom: 11px;
+}
+
+.forgot_pass {
+    font-family: Istok_Web, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.buttons-wrapper {
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 22px;
+}
+
+.login_button, .register_button, .learn-more_button {
+    width: 120px;
+    height: 46px;
+    border: 3px solid #EBD081;
+    background-color: transparent;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 10px;
+    text-align: center;
+    letter-spacing: 2.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    float: left;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin-bottom: 27px;
+}
+
+.login_button, .register_button {
+/*     padding-top: 14px; */
+    margin-right: 10px;
+}
+
+.learn-more_button {
+    clear: right;
+/*     padding-top: 14px; */
+}
+
+.login_button:hover, .register_button:hover, .learn-more_button:hover {
+    border: 3px solid #FCDA6F;
+}
+
+.connect-wrapper {
+    width: 240px;
+    margin: 0 auto;
+}
+
+.connect {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    line-height: normal;
+    font-size: 10px;
+    letter-spacing: 2.4px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    float: left;
+    margin-right: 12px;
+    margin-top: 12px;
+}
+
+.social {
+    width: 35px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    float: left;
+    margin-bottom: 53px;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/social.png');
+}
+
+.social_1 {
+    margin-right: 13px;
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/google-icon.png');
+}
+
+.social_2 {
+	
+    background-image: url('chrome-extension://__MSG_@@extension_id__/content_scripts/img/facebook_icon.png');
+}
+
+.no_account {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-style: normal;
+    line-height: normal;
+    font-size: 14px;
+    color: #FFFFFF;
+    width: 188px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.no_account a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.wrong-data-container {
+    width: 240px;
+    margin: 0 auto;
+    background-color: #EBD081;
+    border-radius: 5px;
+    display: none;
+}
+
+.wrong-data-text {
+    font-family: Istok_Web, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    line-height: normal;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.register_form {
+    display: none;
+}
+
+input:focus, button:focus {
+    outline: none;
+}
+
+input:active, button:active {
+    outline: none;
+}

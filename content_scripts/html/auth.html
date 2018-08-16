@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <body>
+        <div class="panel">
+            <div id="id_move" class="move"></div>
+            <div class="logo"></div>
+            <h1 class="header">Welcome<br>
+            to Frontosaur</h1>
+            <p class="promo">Collaborate on web projects
+            for free</p>
+            <form id="id_login_form" class="login_form auth_form" action="" method="GET" onsubmit="return false;">
+                <div id="id_wrong-data-container" class="wrong-data-container">
+                    <p id="id_wrong-data-text" class="wrong-data-text"></p>
+                </div>
+                <div class="username-wrapper">
+                    <label for="username">E-mail</label><br>
+                    <input id="id_login_username" class="form-input username" type="text" name="username" value="" required>
+                </div>
+                <div class="password-wrapper">
+                    <label for="pass">Password</label><br>
+                    <input id="id_login_pass" class="form-input pass" type="password" name="pass" value="" required>
+                </div>
+                <p class="forgot_pass">Forgot password?</p>
+                <div class="buttons-wrapper clearfix">
+                    <button id="id_login_button" class="login_button" type="submit">login</button>
+                    <button class="learn-more_button">learn more</button>
+                </div>
+                <div class="connect-wrapper clearfix">
+                    <p class="connect">or connect with</p>
+                    <div class="social social_1" id="login_google"></div>
+                    <div class="social social_2" id="login_facebook"></div>
+                </div>
+                <p class="no_account">Don't have account?<a id="to_register"><b>Sign up</b></a></p>
+            </form>
+            <form id="id_register_form" class="register_form auth_form" action="" method="GET">
+                <div id="id_wrong-data-container" class="wrong-data-container">
+                    <p id="id_wrong-data-text" class="wrong-data-text"></p>
+                </div>
+                <div class="username-wrapper">
+                    <label for="username">Your name</label><br>
+                    <input id="id_register_username" class="form-input username" type="text" name="username" value="" required>
+                </div>
+                <div class="email-wrapper">
+                    <label for="email">E-Mail</label><br>
+                    <input id="id_register_email" class="form-input email" type="text" name="e-mail" value="" required>
+                </div>
+                <div class="password-wrapper">
+                    <label for="pass">Password</label><br>
+                    <input id="id_register_pass" class="form-input pass" type="password" name="pass" value="" required>
+                </div>
+                <div class="buttons-wrapper clearfix">
+                    <!-- <input type="submit" value="login" class="login_button"> -->
+                    <button id="id_register_button" class="register_button">register</button>
+                    <button class="learn-more_button">learn more</button>
+                </div>
+                <div class="connect-wrapper clearfix">
+                    <p class="connect">or connect with</p>
+                    <div class="social social_1" id="login_google2"></div>
+                    <div class="social social_2" id="login_facebook2"></div>
+                </div>
+                <p class="no_account">Already registered?<a id="to_login"><b>Sign in</b></a></p>
+            </form>
+            
+        </div>
+        
+    </body>
+</html>

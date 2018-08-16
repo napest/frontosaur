@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	</head>
+	<body>
+		<div class="ge-wrapper">
+			<div class="ge-move-me" id="ge-move"></div>
+			<div class="ge-dots"></div>
+			<img class="ge-photo" src="" alt="" height="69" width="69">
+			<p class="ge-my-name">John Johnson</p>
+			<p class="ge-my-username">@johndoe</p>
+			<div class="ge-group-buttons ge-clearfix">
+				<div class="ge-button ge-page">Page</div>
+				<div class="ge-button ge-projects">Projects	<div class="ge-projects_number">2</div></div>
+				<div class="ge-button ge-comments">Comments</div>
+			</div>
+			<div class="ge-site">
+				<div class="ge-line ge-line_left"></div>
+				<div class="ge-site-name">Правовое бюро Скокова</div>
+				<div class="ge-line ge-line_right"></div>
+			</div>
+			<script id="ge-item-pages" type="text/x-jquery-tmpl">
+				    <div class="ge-item ge-clearfix">
+						<div class="ge-item-icons icons_default ge-clearfix">
+							<div class="ge-item-icon ge-message">
+								<div class="ge-message_number">${task_count}</div>
+							</div>
+						</div>
+						<img class="ge-item-photo">
+						<div class="ge-item-title">${address}</div>
+					</div>
+			</script>
+			<div class="ge-item-container">
+				
+				
+			</div>
+			<div class="ge-bottom ge-clearfix">
+				<div class="ge-add-page ge-clearfix">
+					<p class="ge-add-page_plus">+</p>
+					<p class="ge-add-page_text">Add page</p>
+				</div>
+				<div class="ge-people ge-clearfix">
+					<div class="ge-people-item ge-people-add">+</div>
+					<img class="ge-people-item ge-people-person">
+					<img class="ge-people-item ge-people-person">
+					<div class="ge-people-item ge-people-amount">3</div>
+				</div>
+			</div>
+			<div class="ge-field">
+				<div class="ge-field-triangle"></div>
+				<form action="post">
+					<input class="ge-field-input" type="text" placeholder="Invite with email" name="email">
+				</form>
+				<div class="ge-field-text">or <span class="ge-field-link">copy invitation link</span></div>
+			</div>
+			<div class="ge-add-field">
+				<div class="popup_triangle"></div>
+				<p class="popup_header">Write URL here</p>
+				<input id="popup_add_input" class="popup_input" type="text" value="" required autofocus>
+				<div id="popup_add_btn" class="popup_btn ge-clearfix">
+					<p class="popup_btn_plus">+</p>
+					<p class="popup_btn_text">Add page</p>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
