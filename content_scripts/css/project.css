@@ -7,115 +7,7 @@
 		position: relative;
 		width: auto;
 		}
-		.ge-move-me {
-		/*background-image: url("../img/move-me.png");*/
-		height: 20px;
-		width: 25px;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: cover;
-		position: absolute;
-		left: 25px;
-		cursor: pointer;
-		}
-		.ge-dots {
-		/*background-image: url("../img/dots.png");*/
-		height: 6px;
-		width: 29px;
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: cover;
-		position: absolute;
-		right: 25px;
-		margin-top: 8px;
-		cursor: pointer;
-		}
-		.ge-photo {
-		/*background-image: url("../img/photo.png");*/
-		background-repeat: no-repeat;
-		background-position: 50% 50%;
-		background-size: cover;
-		display: block;
-		margin: 0 auto;
-		margin-top: 30px;
-		margin-bottom: 13px;
-		}
-		.ge-my-name {
-		margin: 0;
-		font-family: Montserrat;
-		font-style: normal;
-		font-weight: bold;
-		line-height: normal;
-		font-size: 14px;
-		text-align: center;
-		letter-spacing: 0.5px;
-		color: #FFFFFF;
-		text-transform: uppercase;
-		}
-		.ge-my-username {
-		margin: 0;
-		font-family: Open_Sans;
-		font-style: normal;
-		font-weight: normal;
-		line-height: normal;
-		font-size: 12px;
-		text-align: center;
-		letter-spacing: 0.3px;
-		color: rgba(255, 255, 255, 0.8);
-		}
-		.ge-group-buttons {
-		border: 2px solid #FFFFFF;
-		box-sizing: border-box;
-		border-radius: 5px;
-		background-color: transparent;
-		width: 298px;
-		margin: 0 auto;
-		margin-top: 26px;
-		}
-		.ge-button {
-		position: relative;
-		cursor: pointer;
-		float: left;
-		width: 98px;
-		height: 30px;
-		padding-top: 8px;
-		border-left: 2px solid #FFFFFF;
-		font-family: Montserrat;
-		font-style: normal;
-		line-height: normal;
-		font-size: 11px;
-		text-align: center;
-		letter-spacing: 1.5px;
-		color: #FFFFFF;
-		box-sizing: border-box;
-		text-transform: uppercase;
-		}
-		.ge-button:first-child {
-		border-left: none;
-		}
-		.ge-button:hover {
-		color: #7885FF;
-		background-color: #FFFFFF;
-		}
-		.ge-projects_number {
-		position: absolute;
-		top: 1px;
-		right: 1px;
-		background: #7885FF;
-		box-sizing: border-box;
-		width: 12px;
-		height: 12px;
-		-moz-border-radius: 12px;
-		-webkit-border-radius: 12px;
-		border-radius: 12px;
-		font-family: Open_Sans;
-		font-style: normal;
-		font-weight: bold;
-		line-height: 12px;
-		font-size: 7px;
-		color: #FFFFFF;
-		letter-spacing: normal !important;
-		}
+		
 		.ge-site {
 		position: relative;
 		margin-top: 18px;
@@ -134,7 +26,7 @@
 		right: 25px;
 		}
 		.ge-site-name {
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: 600;
 		line-height: 17px;
@@ -207,7 +99,7 @@
 		-moz-border-radius: 14px;
 		-webkit-border-radius: 14px;
 		border-radius: 14px;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: bold;
 		line-height: 14px;
@@ -223,7 +115,7 @@
 		}
 		.ge-item-title {
 		float: left;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: normal;
 		line-height: 19px;
@@ -254,7 +146,7 @@
 		float: left;
 		margin: 0;
 		margin-right: 5px;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		line-height: 31px;
 		font-size: 21px;
 		color: #FFFFFF;
@@ -263,7 +155,7 @@
 		}
 		.ge-add-page_text {
 		float: left;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: 600;
 		line-height: 31px;
@@ -283,6 +175,14 @@
 		height: 32px;
 		float: left;
 		margin-right: 8px;
+		background-color: #E8EAFF;
+	    font-family: 'Open Sans';
+	    line-height: 32px;
+	    font-size: 15px;
+	    color: #FFFFFF;
+	    text-align: center;
+	    float: left;
+	    margin-right: 8px;
 		}
 		.ge-people-item:last-child {
 		margin-right: 26px;
@@ -291,7 +191,7 @@
 		border: 2px solid #FFFFFF;
 		box-sizing: border-box;
 		background-color: transparent;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: bold;
 		line-height: 27px;
@@ -299,10 +199,11 @@
 		text-align: center;
 		color: #FFFFFF;
 		cursor: pointer;
+		position: relative;
 		}
 		.ge-people-amount {
 		background: #B8BFFF;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		line-height: 32px;
 		font-size: 15px;
 		color: #FFFFFF;
@@ -310,12 +211,12 @@
 		}
 		.ge-field {
 		display: none;
-		position: relative;
-		width: 200px;
+		position: absolute;
+		right: 0px;
+		width: 243px;
 		background-color: #FFFFFF;
 		border-radius: 5px;
 		margin-top: 20px;
-		margin-left: 140px;
 		display: block;
 		padding-bottom: 1px;
 		}
@@ -331,10 +232,10 @@
 		border: none;
 		margin-left: 10px;
 		margin-top: 10px;
-		width: 180px;
+		width: 205px;
 		padding: 10px 11px 10px 11px;
 		box-sizing: border-box;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: normal;
 		line-height: 17px;
@@ -344,7 +245,7 @@
 		}
 		.ge-field-text {
 		margin: 12px 10px 15px 10px;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: normal;
 		line-height: 17px;
@@ -359,12 +260,13 @@
 		.ge-field-triangle {
 			width: 0;
 			height: 0;
-			border-left: 25px solid transparent;
-			border-right: 25px solid transparent;
-			border-bottom: 15px solid white;
+			    border-left: 8px solid transparent;
+			    border-right: 8px solid transparent;
+			    border-bottom: 8px solid white;
+			    position: absolute;
+			    top: -8px;
 			position: absolute;
-			top: -15px;
-			left: 20px;
+			right: 7px;
 		}
 
 		.ge-add-field {
@@ -390,7 +292,7 @@
 		}
 
 		.ge-add-field .popup_header {
-			font-family: Open_Sans;
+			font-family: 'Open Sans';
 			font-style: normal;
 			font-weight: normal;
 			line-height: 17px;
@@ -425,7 +327,7 @@
 		float: left;
 		margin: 0;
 		margin-right: 5px;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		line-height: 31px;
 		font-size: 21px;
 		color: #919AED;
@@ -434,7 +336,7 @@
 
 		.ge-add-field .popup_btn_text {
 		float: left;
-		font-family: Open_Sans;
+		font-family: 'Open Sans';
 		font-style: normal;
 		font-weight: 600;
 		line-height: 31px;

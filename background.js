@@ -72,13 +72,16 @@ function openScript() {
 	    });
 	    isopen[curScript] = 1;
 	}
-    
-    postMsg({
+    setTimeout(function(){
+	    postMsg({
         from: "bg",
         text: "open " + curScript,
         id: curId,
         side: curSide
-    })
+    });
+    }, 500);
+    
+    
 }
 
 
@@ -167,10 +170,29 @@ function authFacebook(){
 
         function setAccessToken(token) {
           access_token = token;
-          postMsg({
-		        token: token,
-		        type: 'facebook'
-		    });
+          
+          getuserinfo(token);
+        }
+        function getuserinfo(token) {
+	        var xhr = new XMLHttpRequest();
+	        console.log(token);
+	          xhr.open('GET',
+	                   'https://graph.facebook.com/me?fields=name,picture,email&access_token='+token);
+	          xhr.setRequestHeader('Content-Type', 'application/json');
+	          xhr.onload = function () {
+	            if (this.status === 200) {
+		            console.log(response);console.log(this.responseText);
+	              var response = JSON.parse(this.responseText);
+	              
+	              
+	              postMsg({
+			        token: token,
+			        type: "facebook",
+			        data: response
+			    });
+	            }
+	          };
+          xhr.send();
         }
 		chrome.identity.launchWebAuthFlow({'url': 'https://www.facebook.com/dialog/oauth?client_id=400056927186702&redirect_uri=https://inkobepdpephejfifiapofeioijpdcmj.chromiumapp.org/provider_cb&scopes=public_profile,email&response_type=token&state={"{st=state123a,ds=123456789}"}', 'interactive': true},
 		

@@ -20,6 +20,11 @@ var projects = new function() {
     this.getElem = function(id) {
     	return $(window.frontosaur.shadowRoot.getElementById(id));
     }
+    
+    this.getElements = function(classn) {
+    	var elements = $(window.frontosaur.shadowRoot.querySelectorAll(classn));
+    	return elements;
+    }
 
     this.close = function() {
     	projects.removeEventListeners();
@@ -37,10 +42,13 @@ var projects = new function() {
 	    	else projects.getElem('ge-add-project-popup').hide();
 		});
 		projects.getElem('dots').on("click", function() {
-			console.log(projects.getElem('ge-settings-popup'));
 	    	if (projects.getElem('ge-settings-popup').css('display') == 'none') {projects.getElem('ge-settings-popup').show()}
 	    	else projects.getElem('ge-settings-popup').hide();
 		});
+		setTimeout(function () {
+		    projects.getElements("div.ge-title").on("click", function(){ projects.openProject($(this).attr("data-id"))});
+		  }, 500);
+		
 		projects.getElem('ge-add-project-popup-btn').on("click", function(){ projects.addProject()});
 		projects.getElem('signoutbtn').on("click", function(){ projects.signOut()});
     }
@@ -53,23 +61,39 @@ var projects = new function() {
     	curSide = side;
     	projects.loadTemplate();
     };
-
+	
     this.loadTemplate = function() {
-    	$.get(chrome.extension.getURL("content_scripts/html/projects.html"), function(data) {
+	    var getTemplate = function(){
+	    var r = $.Deferred();
+	    $.get(chrome.extension.getURL("content_scripts/html/projects.html"), function(data) {
             var elem = '<link rel="stylesheet" type="text/css" href="' + chrome.extension.getURL("content_scripts/css/index.css") +
                 '">',
                 elem = elem + '<link rel="stylesheet" type="text/css" href="' + chrome.extension.getURL("content_scripts/css/projects.css") +
                 '">',
                 elem = elem + '<div id="id_frontosaur" class="frontosaur">' + (data + '</div>');
             window.frontosaur.shadowRoot.innerHTML = elem;
-            projects.setVars();
-            projects.addEventListeners();
+            r.resolve();
         });
+        return r;
+    };
+	    getTemplate().done(function(){
+		    projects.setVars();
+            projects.addEventListeners();
+	    })
+    };
+    this.openProject = function(id){
+	    projects.sendMsg({
+					        	from: "projects",
+					        	side: curSide,
+					        	text: "openScript",
+					        	script: "project",
+					        	id: id
+					        })
     };
 	this.setVars = function(){
 		chrome.storage.sync.get(['fronto_userinfo'], function(result) {
-      		projects.getElem('username').html(result.fronto_userinfo.name);
-      		projects.getElem('userphoto').attr("src", result.fronto_userinfo.img);
+      		projects.getElem('username').html(result.fronto_userinfo.name ? result.fronto_userinfo.name : "No name");
+      		projects.getElem('userphoto').attr("src", result.fronto_userinfo.img ? result.fronto_userinfo.img : chrome.extension.getURL("content_scripts/img/user.png"));
         });
         chrome.storage.sync.get(['fronto_token'], function(result) {
         $.post( "https://frontosaur.com/api/all_projects", {token: result.fronto_token}, function( data ) {
@@ -77,8 +101,14 @@ var projects = new function() {
 					  if (data.error == 0) {
 			            	
 				            	projects.getElem('ge-item-container').html('');
-					            projects.getElem('ge-item-invites').tmpl(data.invites).appendTo(projects.getElem('ge-item-container'));
-					            projects.getElem('ge-item-projects').tmpl(data.projects).appendTo(projects.getElem('ge-item-container'));
+				            	if((data.invites.length == 0)&&(data.projects[0].length==0)){
+									$("<p>You have no active projects</p>").addClass("ge-empty-alert").appendTo("<div></div>").addClass("ge-empty-item").appendTo(projects.getElem('ge-item-container'));
+				            	}
+				            	else {
+					            	 projects.getElem('ge-item-invites').tmpl(data.invites).appendTo(projects.getElem('ge-item-container'));
+									 projects.getElem('ge-item-projects').tmpl(data.projects).appendTo(projects.getElem('ge-item-container'));
+				            	}
+					           
 					            
 						        //console.log($(window.frontosaur.shadowRoot.getElementById('ge-item-container').querySelectorAll("div.ge-item-name")));
 					        
@@ -127,7 +157,7 @@ var projects = new function() {
 					        	from: "projects",
 					        	side: curSide,
 					        	text: "openScript",
-					        	script: "project-details"
+					        	script: "project"
 					        })
 			            } else if (data.error == 4) {
 			            	
@@ -140,4 +170,4 @@ var projects = new function() {
 	
     };
 }
-
+projects.load("left");

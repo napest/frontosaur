@@ -11,7 +11,7 @@ var auth = new function() {
         if (msg === "open auth") auth.load(message.side);
         else if (msg === "close auth") auth.close();
         else if (message.token){
-	        if (message.type == 'facebook') auth.afterAuthFacebook()
+	        if (message.type == 'facebook') auth.afterAuthFacebook(message)
 	        else auth.afterAuthGoogle(message);
         };
     };
@@ -172,15 +172,16 @@ var auth = new function() {
     this.authGoogle = function(){
 	    console.log("");
 	    auth.sendMsg({
-        	from: "register",
+        	from: "auth",
         	side: curSide,
         	text: "authGoogle",
         	script: "page"
         })
     }
     this.authFacebook = function(){
+	    console.log("");
 	    auth.sendMsg({
-        	from: "register",
+        	from: "auth",
         	side: curSide,
         	text: "authFacebook",
         	script: "page"
@@ -198,6 +199,7 @@ var auth = new function() {
 	        };
 	        //console.log(postdata);
 	        $.post( "https://frontosaur.com/api/registrationGoogle", postdata, function( data ) {
+		        console.log(data);
 	          data = JSON.parse(data);
 			  if (data.error == 0) {
 	            	auth.signInOk(data.token);
@@ -212,18 +214,18 @@ var auth = new function() {
 			});
     }
     this.afterAuthFacebook = function(message){
-			//console.log(message);
+			console.log(message);
 			localStorage.setItem('frontosaurTokenFb', message.token);
 	        userdata = message.data;
 		    var postdata = {
-	            mail: userdata.emailAddresses[0].value,
-	            name: userdata.names[0].displayName,
-	            photo: userdata.photos[0].url,
-	            googleid: userdata.resourceName.substring(7)
+	            mail: userdata.email,
+	            name: userdata.name,
+	            photo: userdata.picture.data.url,
+	            facebookid: userdata.id
 	        };
 	        //console.log(postdata);
 	        $.post( "https://frontosaur.com/api/registrationFacebook", postdata, function( data ) {
-	          data = JSON.parse(data);
+	          console.log(data);data = JSON.parse(data);
 			  if (data.error == 0) {
 	            	auth.signInOk(data.token);
 	            } else if (data.error == 1) {
