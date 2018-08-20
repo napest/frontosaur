@@ -150,7 +150,8 @@ var auth = new function() {
 	            } else if (data.error == 4) {
 	            	auth.error("Token has expired");
 	            } 
-	            console.log(data);
+	            console.log(data); 
+	            
 			});
         auth.sendMsg({
         	from: "auth",
