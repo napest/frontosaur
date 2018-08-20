@@ -90,8 +90,6 @@ var projects = new function() {
 	}
 	
 	
-	
-	
         this.error = function(message) {
     	projects.getElem("id_wrong-data-container").css("display","block");
     	projects.getElem("id_wrong-data-text").html(message);
