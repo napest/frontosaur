@@ -21,6 +21,7 @@ var frontosaur = new function() {
     this.sendMsg = function(msg) {
         chrome.runtime.sendMessage(msg);
     };
+    
 
     this.templatePaths = {
         "login": "/content_scripts/html/login.html",

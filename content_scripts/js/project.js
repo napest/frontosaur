@@ -64,6 +64,8 @@ window.fbAsyncInit = function() {
 		
     }
 
+
+
     this.removeTemplate = function() {
     	frdom.Empty(window.frontosaur.shadowRoot);
     }

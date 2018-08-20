@@ -164,6 +164,7 @@ var auth = new function() {
     this.signUpOk = function(token) {
     	
     };
+    
     this.checkFbStatus = function(){  
 		FB.getLoginStatus(function(response) {
 		    statusChangeCallback(response);
