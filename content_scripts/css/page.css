@@ -332,11 +332,7 @@
                 margin: 0 auto;
                 margin-bottom: 23px;
             }
-     .ge-empty-item {
-    text-align: center;
-    color: #FFFFFF;
-    width: 
-}
+     
 .ge-button-single {
     cursor: pointer;
     border: 2px solid #FFFFFF;
@@ -351,11 +347,4 @@
     color: #FFFFFF;
     display: inline-block;
     padding: 8px 10px;
-}
-p.ge-paragraph {
-    font-family: 'Open Sans', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 19px;
-    font-size: 17px;    
 }
