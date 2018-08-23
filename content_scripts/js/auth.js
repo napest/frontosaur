@@ -150,7 +150,8 @@ var auth = new function() {
 	            } else if (data.error == 4) {
 	            	auth.error("Token has expired");
 	            } 
-	            console.log(data);
+	            console.log(data); 
+	            
 			});
         auth.sendMsg({
         	from: "auth",
@@ -163,6 +164,7 @@ var auth = new function() {
     this.signUpOk = function(token) {
     	
     };
+    
     this.checkFbStatus = function(){  
 		FB.getLoginStatus(function(response) {
 		    statusChangeCallback(response);

@@ -56,6 +56,7 @@ function onBrowserAction() {
     })
 }
 
+
 function closeScript(script) {
     postMsg({
         from: "bg",
