@@ -14,43 +14,30 @@
 		            <p id="signoutbtn">Sign out</p>
 	            </div>
             <img class="ge-photo" id="userphoto" src="" alt="" height="69" width="69">
-            <p class="ge-my-name" id="username">John Johnson</p>
+            <p class="ge-my-name" id="username"></p>
 			<div class="ge-group-buttons ge-clearfix">
 				<div class="ge-button ge-page">Page</div>
-				<div class="ge-button ge-projects">Projects	<div class="ge-projects_number">2</div></div>
+				<div class="ge-button ge-projects">Projects</div>
 				<div class="ge-button ge-comments">Comments</div>
 			</div>
-<<<<<<< HEAD
+
 			<div id="content">
 				<div class="ge-site">
 					<div class="ge-line ge-line_left"></div>
 					<div class="ge-site-name" id="ge-project-name"></div>
 					<div class="ge-line ge-line_right"></div>
 				</div>
-				<script id="ge-item-pages" type="text/x-jquery-tmpl">
-					    <div class="ge-item ge-clearfix">
-							<div class="ge-item-icons icons_default ge-clearfix">
-								<div class="ge-item-icon ge-message">
-									<div class="ge-message_number">${task_count}</div>
-								</div>
-=======
-			
-			<div class="ge-site">
-				<div class="ge-line ge-line_left"></div>
-				<div class="ge-site-name">Правовое бюро Скокова</div>
-				<div class="ge-line ge-line_right"></div>
-			</div>
 			<script id="ge-item-pages" type="text/x-jquery-tmpl">
 				    <div class="ge-item ge-clearfix">
 						<div class="ge-item-icons icons_default ge-clearfix">
 							<div class="ge-item-icon ge-message">
 								<div class="ge-message_number">${task_count}</div>
->>>>>>> master
+
 							</div>
 							<img class="ge-item-photo">
 							<div class="ge-item-title">${address}</div>
 						</div>
-				</script>
+		    </script>
 				<div class="ge-item-container" id="ge-item-container">
 					
 					
@@ -64,8 +51,9 @@
 						<img class="ge-people-item ge-people-person" src="${img}">
 					</script>
 					<div class="ge-people ge-clearfix" id="ge-people">
-						<div class="ge-people-item ge-people-add">+
-							<div class="ge-field">
+						<div class="ge-people-item ge-people-add"  >
+							<span id="addpeople" style="display: block">+</span>
+							<div class="ge-field" style="display: none" id="addpeoplepopup">
 								<div class="ge-field-triangle"></div>
 								<form action="post">
 									<input class="ge-field-input" type="text" placeholder="Invite with email" name="email">
@@ -73,7 +61,6 @@
 								<div class="ge-field-text">or <span class="ge-field-link">copy invitation link</span></div>
 							</div>
 						</div>
-						<img src="" alt="" class="ge-people-item ge-people-person"/>
 					</div>
 				</div>
 				

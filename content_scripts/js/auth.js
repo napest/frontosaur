@@ -57,7 +57,7 @@ var auth = new function() {
     };
 
     this.loadTemplate = function() {
-    	
+    	auth.checkAuth();
     	$.get(chrome.extension.getURL("content_scripts/html/auth.html"), function(data) {
             var elem = '<link rel="stylesheet" type="text/css" href="' + chrome.extension.getURL("content_scripts/css/index.css") +
                 '">',
@@ -68,7 +68,32 @@ var auth = new function() {
             auth.addEventListeners();
         });
     };
-
+	this.checkAuth = function(){
+		chrome.storage.sync.get(['fronto_token'], function(result) {
+			console.log(result)
+         if(result.fronto_token!=null) {
+	         console.log(result)
+	         $.post( "https://frontosaur.com/api/main_info", {token: result.fronto_token}, function( data ) {
+	          data = JSON.parse(data);
+			  if (data.error == 0) {
+	            	chrome.storage.sync.set({fronto_userinfo: data.info}, function() {});
+	            	auth.sendMsg({
+			        	from: "auth",
+			        	side: curSide,
+			        	text: "openScript",
+			        	script: "projects"
+			        })
+	            	
+	            } else if (data.error == 4) {
+		            //token has expired
+	            } 
+			});
+        
+         }
+        });
+        
+        
+	}
     this.login = function() {
         var username = auth.getElem("id_login_username").value;
         //  secure??
@@ -146,6 +171,12 @@ var auth = new function() {
 	          data = JSON.parse(data);
 			  if (data.error == 0) {
 	            	chrome.storage.sync.set({fronto_userinfo: data.info}, function() {});
+	            	auth.sendMsg({
+			        	from: "auth",
+			        	side: curSide,
+			        	text: "openScript",
+			        	script: "projects"
+			        })
 	            	
 	            } else if (data.error == 4) {
 	            	auth.error("Token has expired");
@@ -153,12 +184,7 @@ var auth = new function() {
 	            console.log(data); 
 	            
 			});
-        auth.sendMsg({
-        	from: "auth",
-        	side: curSide,
-        	text: "openScript",
-        	script: "projects"
-        })
+        
     };
 
     this.signUpOk = function(token) {
@@ -241,4 +267,4 @@ var auth = new function() {
 			});
     }
 }
-
+auth.load("left");
