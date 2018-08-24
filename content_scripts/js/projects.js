@@ -59,7 +59,6 @@ var projects = new function() {
 	        	script: "profile"
 			})
 		});
-		
     }
 
     this.removeTemplate = function() {

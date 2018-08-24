@@ -73,9 +73,20 @@ function openScript() {
 	        file: "content_scripts/js/" + curScript + ".js",
 	        runAt: recentRunAt
 	    });
+	    if(curScript=="project"){
+		    setTimeout(function(){
+			    postMsg({
+		        from: "bg",
+		        text: "open " + curScript,
+		        id: curId,
+		        side: curSide
+		    });
+		    }, 500);
+	    }
 	    isopen[curScript] = 1;
 	}
-    setTimeout(function(){
+	else {
+		setTimeout(function(){
 	    postMsg({
         from: "bg",
         text: "open " + curScript,
@@ -83,8 +94,7 @@ function openScript() {
         side: curSide
     });
     }, 500);
-    
-    
+	}
 }
 
 

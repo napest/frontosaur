@@ -35,13 +35,14 @@ var project = new function() {
     this.addEventListeners = function() {
 	    project.getElem('signoutbtn').on("click", function(){ helpers.signOut()});
 		project.getElem('addpeople').on("click", function() {
-	    	if ($(this).children().css('display') == 'none') {$(this).children().show(); project.getElem("addpeopleinput").focus()}
-	    	else $(this).children().hide();
+	    	if (project.getElem("addpeoplepopup").css('display') == 'none') {project.getElem("addpeoplepopup").show(); project.getElem("addpeopleinput").focus()}
+	    	else project.getElem("addpeoplepopup").hide();
 		});
 		project.getElem('dots').on("click", function() {
 	    	if (project.getElem('ge-settings-popup').css('display') == 'none') {project.getElem('ge-settings-popup').show()}
 	    	else project.getElem('ge-settings-popup').hide();
 		});
+		
     }
 
 
@@ -135,27 +136,6 @@ var project = new function() {
     	project.getElem("id_wrong-data-container").css("display","block");
     	project.getElem("id_wrong-data-text").html(message);
     };
-    this.signOut = function() {
-		chrome.storage.sync.get(['fronto_token'], function(result) {
-					 $.post( "https://frontosaur.com/api/exit", {token: result.fronto_token}, function( data ) {
-					  
-			          data = JSON.parse(data);
-					  if (data.error == 0) {
-						    chrome.storage.sync.remove(['fronto_token']);
-			            	projects.sendMsg({
-					        	from: "project",
-					        	side: curSide,
-					        	text: "openScript",
-					        	script: "auth"
-					        });
-					        projects.close();
-			            } else if (data.error == 4) {
-			            	
-			            } 
-			            console.log(data);
-					});
-		        });
-	}
 
     this.addProject = function() {
 	    

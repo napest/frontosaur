@@ -10,14 +10,12 @@ var helpers = new function() {
 						    chrome.storage.sync.remove(['fronto_token']);
 			            	helpers.sendMsg({
 					        	from: "project",
-					        	side: curSide,
 					        	text: "openScript",
 					        	script: "auth"
 					        });
 			            } else if (data.error == 4) {
 			            	helpers.sendMsg({
 					        	from: "helpers",
-					        	side: curSide,
 					        	text: "openScript",
 					        	script: "auth"
 					        });
