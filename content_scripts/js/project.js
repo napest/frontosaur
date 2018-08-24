@@ -42,7 +42,14 @@ var project = new function() {
 	    	if (project.getElem('ge-settings-popup').css('display') == 'none') {project.getElem('ge-settings-popup').show()}
 	    	else project.getElem('ge-settings-popup').hide();
 		});
-		
+		project.getElem('profile_settings').on("click", function(){ 
+			project.sendMsg({
+	        	from: "projects",
+	        	side: curSide,
+	        	text: "openScript",
+	        	script: "profile"
+			})
+		});
     }
 
 
@@ -105,6 +112,9 @@ var project = new function() {
 						            if(data.info.users.length>3){
 							         project.getElem('ge-item-people').tmpl(data.info.users.slice(0,2)).appendTo(project.getElem('ge-people'));
 							         project.getElem("ge-people").html(project.getElem("ge-people").html()+'<div class="ge-people-item ge-people-amount">'+data.info.users.length-2+'</div>')   
+						            }
+						            else {
+							            project.getElem('ge-item-people').tmpl(data.info.users).appendTo(project.getElem('ge-people'));
 						            }
 						        });
 							break;

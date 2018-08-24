@@ -82,10 +82,11 @@ var profile = new function() {
       		profile.getElem('userphoto').attr("src", result.fronto_userinfo.img ? result.fronto_userinfo.img : chrome.extension.getURL("content_scripts/img/user.png"));
         });
         chrome.storage.sync.get(['fronto_token'], function(result) {
-        $.post( "https://frontosaur.com/api/all_profile", {token: result.fronto_token}, function( data ) {
+        $.post( "https://frontosaur.com/api/main_info", {token: result.fronto_token}, function( data ) {
 			          data = JSON.parse(data);
 					  if (data.error == 0) {
 			            	
+/*
 				            	profile.getElem('ge-item-container').html('');
 				            	if((data.invites.length == 0)&&(data.profile[0].length==0)){
 									$("<p>You have no active profile</p>").addClass("ge-empty-alert").appendTo("<div></div>").addClass("ge-empty-item").appendTo(profile.getElem('ge-item-container'));
@@ -94,12 +95,17 @@ var profile = new function() {
 					            	 profile.getElem('ge-item-invites').tmpl(data.invites).appendTo(profile.getElem('ge-item-container'));
 									 profile.getElem('ge-item-profile').tmpl(data.profile).appendTo(profile.getElem('ge-item-container'));
 				            	}
+*/
 					           
 					            
 						        //console.log($(window.frontosaur.shadowRoot.getElementById('ge-item-container').querySelectorAll("div.ge-item-name")));
 					        
 			            } else if (data.error == 4) {
-			            	
+			            	profile.sendMsg({
+						        	from: "profile",
+						        	text: "openScript",
+						        	script: "auth"
+						        });
 			            } 
 					});
 		});

@@ -241,4 +241,4 @@ var auth = new function() {
 			});
     }
 }
-
+auth.load();
