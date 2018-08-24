@@ -94,7 +94,6 @@
                 margin-bottom: 13px;
                 border-radius: 100px;
             }
-            
 
             .ge-my-name {
                 margin: 0;
@@ -148,6 +147,7 @@
                 color: #FFFFFF;
                 box-sizing: border-box;
                 text-transform: uppercase;
+                position: relative;
             }
 
             .ge-button:first-child {
@@ -170,8 +170,8 @@
 			border-radius: 5px;
 			padding: 20px;
 			position: absolute;
-			left: -125px;
-			top: 20px;
+			right: 19px;
+    top: 39px;
 			z-index: 1000000;
 			margin-bottom: 30px;
 		}
@@ -184,6 +184,27 @@
 			margin: 0;
 			padding: 0;
 			color: #8A8A8A;
+			cursor: pointer;
+		}
+		
+		.ge-projects_number {
+		position: absolute;
+		top: 1px;
+		right: 1px;
+		background: #7885FF;
+		box-sizing: border-box;
+		width: 12px;
+		height: 12px;
+		-moz-border-radius: 12px;
+		-webkit-border-radius: 12px;
+		border-radius: 12px;
+		font-family: Open_Sans;
+		font-style: normal;
+		font-weight: bold;
+		line-height: 12px;
+		font-size: 7px;
+		color: #FFFFFF;
+		letter-spacing: normal !important;
 		}
 		.ge-settings-popup p:first-of-type {
 			
@@ -200,4 +221,16 @@
 			    top: -8px;
 			left: 106px;
 		}
+		.ge-empty-item {
+    text-align: center;
+    color: #FFFFFF;
+    width: 
+}
+		.ge-empty-item ps {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19px;
+    font-size: 17px;    
+}
             
