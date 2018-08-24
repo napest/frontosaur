@@ -3,6 +3,7 @@ var helpers = new function() {
 		   
     this.signOut = function(msg) {
         chrome.storage.sync.get(['fronto_token'], function(result) {
+	        console.log(result);
 					$.post( "https://frontosaur.com/api/exit", {token: result.fronto_token}, function( data ) {
 					  
 			          data = JSON.parse(data);
@@ -10,20 +11,19 @@ var helpers = new function() {
 						    chrome.storage.sync.remove(['fronto_token']);
 			            	helpers.sendMsg({
 					        	from: "project",
-					        	side: curSide,
 					        	text: "openScript",
 					        	script: "auth"
 					        });
 			            } else if (data.error == 4) {
 			            	helpers.sendMsg({
 					        	from: "helpers",
-					        	side: curSide,
 					        	text: "openScript",
 					        	script: "auth"
 					        });
 			            }
 					});
 		});
+		
     };
     
     this.sendMsg = function(msg) {
