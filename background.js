@@ -1,4 +1,4 @@
-var curScript = "projects",
+var curScript = "auth",
 	curId = "",
     curSide = "left",
     recentRunAt = "document_idle",
@@ -8,7 +8,8 @@ var curScript = "projects",
     isopen = {
 	    "auth": 0,
 	    "projects": 0,
-	    "project": 0
+	    "project": 0,
+	    "profile": 0
     }
 
 chrome.runtime.onInstalled.addListener(onInstalled);
@@ -20,7 +21,8 @@ function onTabStatusUpdated(tabId, changeInfo, tab) {
     isopen = {
 	    "auth": 0,
 	    "projects": 0,
-	    "project": 0
+	    "project": 0,
+	    "profile": 0
     }
 }
 

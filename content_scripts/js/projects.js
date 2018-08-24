@@ -51,6 +51,15 @@ var projects = new function() {
 		
 		projects.getElem('ge-add-project-popup-btn').on("click", function(){ projects.addProject()});
 		projects.getElem('signoutbtn').on("click", function(){ helpers.signOut()});
+		projects.getElem('profile_settings').on("click", function(){ 
+			projects.sendMsg({
+	        	from: "projects",
+	        	side: curSide,
+	        	text: "openScript",
+	        	script: "profile"
+			})
+		});
+		
     }
 
     this.removeTemplate = function() {
@@ -83,12 +92,12 @@ var projects = new function() {
     };
     this.openProject = function(id){
 	    projects.sendMsg({
-					        	from: "projects",
-					        	side: curSide,
-					        	text: "openScript",
-					        	script: "project",
-					        	id: id
-					        })
+        	from: "projects",
+        	side: curSide,
+        	text: "openScript",
+        	script: "project",
+        	id: id
+        })
     };
 	this.setVars = function(){
 		chrome.storage.sync.get(['fronto_userinfo'], function(result) {
@@ -124,33 +133,7 @@ var projects = new function() {
     	projects.getElem("id_wrong-data-container").css("display","block");
     	projects.getElem("id_wrong-data-text").html(message);
     };
-	this.signOut = function() {
-		chrome.storage.sync.get(['fronto_token'], function(result) {
-					 $.post( "https://frontosaur.com/api/exit", {token: result.fronto_token}, function( data ) {
-					  
-			          data = JSON.parse(data);
-			          
-					  if (data.error == 0) {
-						    chrome.storage.sync.remove(['fronto_token']);
-			            	projects.sendMsg({
-					        	from: "projects",
-					        	side: curSide,
-					        	text: "openScript",
-					        	script: "auth"
-					        });
-					        projects.close();
-			            } else if (data.error == 4) {
-			            	project.sendMsg({
-						        	from: "project",
-						        	side: curSide,
-						        	text: "openScript",
-						        	script: "auth"
-						        });
-			            } 
-			            console.log(data);
-					});
-		        });
-	}
+	
     this.addProject = function() {
 	    
 			if(projects.getElem('popup_input').val() != "") {
